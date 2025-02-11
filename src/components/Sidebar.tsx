@@ -247,65 +247,77 @@ export const Sidebar = () => {
   ];
 
   return (
-    <div className="w-16 bg-white border-r flex flex-col items-center py-4 space-y-8">
-      {navItems.map((item, index) => {
-        const Icon = item.icon;
-        return (
-          <div
-            key={index}
-            className="relative"
-            onMouseEnter={() => setHoveredItem(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-          >
-            <button
-              className={`p-2 rounded-lg hover:bg-gray-50 transition-colors ${
-                item.isActive ? 'text-purple-600 bg-purple-50' : 'text-gray-500'
-              }`}
+    <div className="h-screen w-16 bg-white border-r flex flex-col items-center">
+      {/* Logo section */}
+      <div className="w-full p-4 mb-4 flex justify-center">
+        <img 
+          src="/zeigoLogo.svg" 
+          alt="Logo" 
+          className="w-8 h-8"
+        />
+      </div>
+
+      {/* Navigation items */}
+      <div className="flex-1 w-full flex flex-col items-center py-4 space-y-8">
+        {navItems.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={index}
+              className="relative"
+              onMouseEnter={() => setHoveredItem(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
             >
-              <Icon size={20} />
-            </button>
-            
-            {/* Popover */}
-            {hoveredItem === index && item.submenu && (
-              <div 
-                className="absolute left-14 top-0 bg-white rounded-lg shadow-lg py-4 whitespace-nowrap z-50 border min-w-[200px]"
-                onMouseEnter={handlePopoverMouseEnter}
-                onMouseLeave={handlePopoverMouseLeave}
+              <button
+                className={`p-2 rounded-lg hover:bg-gray-50 transition-colors ${
+                  item.isActive ? 'text-purple-600 bg-purple-50' : 'text-gray-500'
+                }`}
               >
-                {/* Arrow */}
-                <div className="absolute left-0 top-6 -translate-x-1 w-2 h-2 bg-white transform rotate-45 border-l border-t" />
-                
-                {/* Submenu content */}
-                <div className="relative">
-                  {item.submenu.sections.map((section, sectionIndex) => (
-                    <div key={sectionIndex}>
-                      {section.title && (
-                        <div className="px-4 py-2 text-sm text-gray-500">{section.title}</div>
-                      )}
-                      <div className="mb-2">
-                        {section.items.map((subItem, itemIndex) => (
-                          <button
-                            key={itemIndex}
-                            className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 flex items-center justify-between ${
-                              subItem.isHighlighted ? 'bg-gray-50' : ''
-                            }`}
-                          >
-                            <span className="text-gray-700">{subItem.label}</span>
-                            {subItem.external && <ExternalLink size={14} className="text-gray-400" />}
-                          </button>
-                        ))}
+                <Icon size={20} />
+              </button>
+              
+              {/* Popover */}
+              {hoveredItem === index && item.submenu && (
+                <div 
+                  className="absolute left-14 top-0 bg-white rounded-lg shadow-lg py-4 whitespace-nowrap z-50 border min-w-[200px]"
+                  onMouseEnter={handlePopoverMouseEnter}
+                  onMouseLeave={handlePopoverMouseLeave}
+                >
+                  {/* Arrow */}
+                  <div className="absolute left-0 top-6 -translate-x-1 w-2 h-2 bg-white transform rotate-45 border-l border-t" />
+                  
+                  {/* Submenu content */}
+                  <div className="relative">
+                    {item.submenu.sections.map((section, sectionIndex) => (
+                      <div key={sectionIndex}>
+                        {section.title && (
+                          <div className="px-4 py-2 text-sm text-gray-500">{section.title}</div>
+                        )}
+                        <div className="mb-2">
+                          {section.items.map((subItem, itemIndex) => (
+                            <button
+                              key={itemIndex}
+                              className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 flex items-center justify-between ${
+                                subItem.isHighlighted ? 'bg-gray-50' : ''
+                              }`}
+                            >
+                              <span className="text-gray-700">{subItem.label}</span>
+                              {subItem.external && <ExternalLink size={14} className="text-gray-400" />}
+                            </button>
+                          ))}
+                        </div>
+                        {sectionIndex < item.submenu.sections.length - 1 && (
+                          <div className="mx-4 my-2 border-t border-gray-100" />
+                        )}
                       </div>
-                      {sectionIndex < item.submenu.sections.length - 1 && (
-                        <div className="mx-4 my-2 border-t border-gray-100" />
-                      )}
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        );
-      })}
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

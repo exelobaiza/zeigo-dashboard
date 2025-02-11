@@ -11,11 +11,11 @@ import { BottomStats } from './components/BottomStats';
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       <div className="flex">
         <Sidebar />
         <div className="flex-1">
-          <div className="max-w-7xl">
+          <div className="max-w-8xl">
+          <Header />
             <div className="py-6">
               <h1 className="text-2xl font-bold px-4">Welcome, Emerson Electric. Co !</h1>
               <p className="text-sm text-gray-500 px-4 mt-1">Last update: Wednesday, January 7</p>

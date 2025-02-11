@@ -72,7 +72,7 @@ export const BottomStats = () => {
                 <div className="text-sm text-gray-600 mb-1">Represents</div>
                 <div className="flex items-start space-x-2 mb-3">
                   <Icon size={20} className={item.color} />
-                  <div className="text-sm font-medium">{item.label}</div>
+                  <div className="text-sm font-medium h-10">{item.label}</div>
                 </div>
                 <div className="mb-2">
                   <span className={`text-3xl font-bold ${item.color}`}>{item.value}</span>

@@ -14,7 +14,7 @@ export const EmissionsChart = () => {
       <div className="space-y-8">
         {data.map((item) => (
           <div key={item.name} className="relative">
-            <div className="flex items-center mb-2">
+            <div className="flex items-center mb-2 h-8">
               <span className="text-sm text-gray-600 font-medium whitespace-pre-line">{item.name}</span>
             </div>
             <div className="relative h-4">

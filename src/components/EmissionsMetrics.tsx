@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 
 export const EmissionsMetrics = () => {
   return (
-    <div className="p-4 space-y-4">
+    <div className="pb-4 space-y-4">
       <div className="bg-white rounded-lg p-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">

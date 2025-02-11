@@ -1,9 +1,9 @@
 import React from 'react';
-import { Plus, MoreHorizontal } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 export const SiteMetrics = () => {
   return (
-    <div className="flex space-x-4 p-4">
+    <div className="flex space-x-4 pb-4">
       <div className="bg-white rounded-lg p-4 flex-1">
         <div className="text-sm text-gray-600">Houston Factory</div>
         <div className="flex items-baseline space-x-2">
@@ -24,9 +24,6 @@ export const SiteMetrics = () => {
         <Plus size={20} />
         <span className="ml-2">Add site</span>
       </button>
-      <div className="flex-1 flex items-center justify-center">
-        <MoreHorizontal size={20} className="text-gray-400" />
-      </div>
     </div>
   );
 };
