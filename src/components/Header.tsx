@@ -4,10 +4,6 @@ import { Bell, ChevronDown } from 'lucide-react';
 export const Header = () => {
   return (
     <div className="flex justify-between items-center p-4 border-b">
-      <div className="flex items-center space-x-2">
-        <span className="text-purple-600 font-semibold">Copilot</span>
-        <ChevronDown size={20} />
-      </div>
       <div className="flex items-center space-x-4">
         <Bell size={20} />
         <div className="flex items-center space-x-2">
