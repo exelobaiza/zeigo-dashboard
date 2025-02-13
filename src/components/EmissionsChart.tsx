@@ -17,7 +17,7 @@ export const EmissionsChart = () => {
             <div className="flex items-center mb-2 h-8">
               <span className="text-sm text-gray-600 font-medium whitespace-pre-line">{item.name}</span>
             </div>
-            <div className="relative h-4">
+            <div className="relative h-6">
               {/* Background with grid lines */}
               <div className="absolute inset-0 flex">
                 {Array.from({ length: 9 }).map((_, i) => (
